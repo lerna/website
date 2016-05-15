@@ -23,7 +23,11 @@
     </header>
 
     <article class="content">
-      <section>
+      <section class="content__section" id="about">
+        <h2>
+          <a href="#about">About</a>
+        </h2>
+
         <p>
           Splitting up large codebases into separate independently versioned
           packages is extremely useful for code sharing. However, making changes
@@ -37,9 +41,7 @@
           React, Angular, Ember, Meteor, Jest, and many others develop all of
           their packages within a single repository.
         </p>
-      </section>
 
-      <section>
         <p class="text__important">
           Lerna is a tool that optimizes the workflow around managing
           multi-package repositories with git and npm.
@@ -48,8 +50,10 @@
 
       <hr class="hr--large">
 
-      <section>
-        <h2>Getting Started</h2>
+      <section class="content__section" id="getting-started">
+        <h2>
+          <a href="#getting-started">Getting Started</a>
+        </h2>
 
         <p>
           Let's start by installing Lerna globally with
@@ -78,6 +82,113 @@
   packages/
   package.json
   lerna.json</code></pre>
+      </section>
+
+      <hr class="hr--large">
+
+      <section class="content__section" id="commands">
+        <h2>
+          <a href="#commands">Commands</a>
+        </h2>
+
+        <section class="command" id="command-init">
+          <h3><a href="#command-init">
+            <code>lerna init</code>
+          </a></h3>
+
+          <p>
+            Create a new lerna repo or upgrade an existing repo to the current
+            version of Lerna.
+          </p>
+
+          <h4>Options</h4>
+
+          <p>
+            <code>--independent</code>/<code>-i</code> – Use independent
+            versioning mode.
+          </p>
+        </section>
+
+        <section class="command" id="command-bootstrap">
+          <h3><a href="#command-bootstrap">
+            <code>lerna bootstrap</code>
+          </a></h3>
+
+          <p>
+            Bootstrap the packages in the current Lerna repo. Installing all their
+            dependencies and linking any cross-dependencies.
+          </p>
+        </section>
+
+        <section class="command" id="command-publish">
+          <h3><a href="#command-publish">
+            <code>lerna publish</code>
+          </a></h3>
+
+          <p>
+            Create a new release of the packages that have been updated. Prompts
+            for a new version and updates all the packages on git and npm.
+          </p>
+
+          <h4>Options</h4>
+
+          <p>
+            <code>--npm-tag [tagname]</code> — Publish to npm with the given
+            npm dist-tag (Defaults to latest).
+          </p>
+          <p>
+            <code>--canary</code>/<code>-c</code> – Create a canary release.
+          </p>
+          <p>
+            <code>--skip-git</code> – Don't run any git commands.
+          </p>
+          <p>
+            <code>--force-publish [packages]</code> — Force publish for the
+            specified packages (comma-separated) or all packages using
+            <code>*</code> (skips the git diff check for changed packages).
+          </p>
+        </section>
+
+        <section class="command" id="command-updated">
+          <h3><a href="#command-updated">
+            <code>lerna updated</code>
+          </a></h3>
+          <p>
+            Check which packages have changed since the last release.
+          </p>
+        </section>
+
+        <section class="command" id="command-diff">
+          <h3><a href="#command-diff">
+            <code>lerna diff [package?]</code>
+          </a></h3>
+
+          <p>
+            Diff all packages or a single package since the last release.
+          </p>
+        </section>
+
+        <section class="command" id="command-run">
+          <h3><a href="#command-run">
+            <code>lerna run [script]</code>
+          </a></h3>
+
+          <p>
+            Run an <a href="https://docs.npmjs.com/misc/scripts">npm script</a>
+            in each package that contains that script.
+          </p>
+        </section>
+
+        <section class="command" id="command-ls">
+          <h3><a href="#command-ls">
+            <code>lerna ls</code>
+          </a></h3>
+
+          <p>
+            List all of the public packages in the current Lerna repo.
+          </p>
+        </section>
+
       </section>
     </article>
   </body>
