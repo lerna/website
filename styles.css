@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font: normal 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hero {
+  padding: 1.5em 2em 2em;
+  text-align: center;
+  background-image: -webkit-linear-gradient(
+    40deg,
+    #00fff0 0%,
+    #677ef8 50%,
+    #cc00ff 100%
+  );
+  background-image: linear-gradient(
+    40deg,
+    #00fff0 0%,
+    #677ef8 50%,
+    #cc00ff 100%
+  );
+  background-size: 100%;
+  color: white;
+  font-size: 2em;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero__lead {
+  margin: 0em 0 0;
+}
+
+.hero__links {
+  margin: 1em 0 0;
+}
