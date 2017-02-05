@@ -1,0 +1,10 @@
+title: Lerna · A tool for managing JavaScript projects with multiple packages.
+
+# Build settings
+markdown: kramdown
+theme: minima
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
