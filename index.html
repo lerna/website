@@ -5,6 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lerna · A tool for managing JavaScript projects with multiple packages.</title>
+    <link href="images/fav.png" rel="icon" type="image/png" />
+    <!--meta for seo and search results-->
+    <meta name="description" content="A tool for managing JavaScript projects with multiple packages. Lerna is a tool that optimizes the workflow around managing multi-package repositories with git and npm." />
+    <meta content="index, follow" name="robots" />
+    <meta content="1 days" name="revisit-after" />
+    <meta content="all" name="robots" />
+    <meta content="all" name="googlebot" />
+    <!--social links-->
+    <meta property="og:title" content="Lerna · A tool for managing JavaScript projects with multiple packages." />
+    <meta property="og:site_name" content="lernajs" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A tool for managing JavaScript projects with multiple packages." />
+    <meta property="og:url" content="https://lernajs.io/" />
+    <meta property="og:image" content="images/lerna-hero.svg" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:image:type" content="image/svg" />
+    <meta name="twitter:site" content="@lernajs" />
+    <meta name="twitter:creator" content="@lernajs" />
+    <meta name="twitter:title" content="Lerna" />
+    <meta name="twitter:description" content="A tool for managing JavaScript projects with multiple packages." />
+    <meta name="twitter:image" content="images/lerna-hero.svg" />
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -18,7 +40,9 @@
       </p>
 
       <p class="hero__follow">
-        <a href="https://twitter.com/lernajs" target="_blank">Follow Lerna on Twitter</a>
+        <a class="twitter-follow-button" href="https://twitter.com/lernajs" data-size="large">
+          Follow @Lerna</a>
+        <!--<a href="https://twitter.com/lernajs" target="_blank">Follow Lerna on Twitter</a>-->
       </p>
     </header>
 
@@ -268,5 +292,23 @@
           </ul>
       </section>
     </article>
+    <script>
+    window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+
+        return t;
+    }(document, "script", "twitter-wjs"));
+</script>
   </body>
 </html>
