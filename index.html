@@ -135,6 +135,72 @@
           </p>
         </section>
 
+        <section class="command" id="command-init">
+          <h3><a href="#command-init">
+            <code>lerna create &lt;package name&gt; &lt;location&gt;</code>
+          </a></h3>
+
+          <p>
+            Create a new lerna-managed package.
+          </p>
+          <p>
+            <strong>
+                The package name (including scope), which must be locally unique and
+                publicly available.
+            </strong>
+          </p>
+          <p>
+            <strong>
+              Location will default to the first configured package
+              location.
+            </strong>                   
+          </p>
+        </section>
+
+        <section class="command" id="command-ls">
+          <h3><a href="#command-ls">
+            <code>lerna add &lt;package&gt;</code>
+          </a></h3>
+
+          <p>
+            Add a dependency to matched packages.
+          </p>
+          <p>
+            <p>
+              <code>
+                # Install module-1 to module-2 <br/>
+                lerna add module-1 --scope=module-2
+              </code>
+            </p>
+            <p>
+              <code>
+                # Install module-1 in all modules except module-1 <br/>
+                lerna add module-1
+              </code>
+            </p>
+            <p>
+              <code>
+                # Install babel-core in all modules <br/>
+                lerna add babel-core
+              </code>
+            </p>
+
+            <h3>Options</h3>
+            <p>
+              <code>--scope=&lt;package name&gt;</code> — Add the new package to a specific local package.
+            </p>
+            <p>
+              <code>--dev</code> — Add the new package to devDependencies instead of dependencies.
+            </p>
+            <p>
+              <code>--exact</code> — Add the new package with an exact version (e.g., 1.0.1) rather than the default ^ semver range (e.g., ^1.0.1).
+            </p>
+            <p>
+              <code>--registry</code> — Use a custom registry to install the targeted package.
+            </p>
+          </p>
+        </section>
+
         <section class="command" id="command-import">
           <h3><a href="#command-import">
             <code>lerna import &lt;pathToRepo&gt;</code>
@@ -184,7 +250,7 @@
 
         <section class="command" id="command-diff">
           <h3><a href="#command-diff">
-            <code>lerna diff [package?]</code>
+            <code>lerna diff &lt;package&gt;</code>
           </a></h3>
 
           <p>
@@ -192,14 +258,64 @@
           </p>
         </section>
 
+        <section class="command" id="command-ls">
+          <h3><a href="#command-ls">
+            <code>lerna version &lt;version&gt;</code>
+          </a></h3>
+
+          <p>
+            Bump the version of packages changed since the last release.
+          </p>
+          <p>
+            <code>lerna version 1.0.1 # explicit </code><br/>
+            <code>lerna version patch # semver keyword </code><br/>
+            <code>lerna version       # select from prompt(s)</code>
+          </p>
+
+          <p>
+              If you are using semantic versioning, you can use a keyword to increment the number to the next value. <br/>
+          </p>
+
+          <p>
+            <strong>Semver Keywords</strong>  <br/>
+            major | minor | patch | premajor | preminor | prepatch | prerelease
+          </p>
+
+          <h3>Options</h3>
+
+          <p>
+            <code>--amend</code> — When run with this flag, <code>lerna version</code> will perform all changes on the current commit, instead of adding a new one.
+          </p>
+          <p>
+            <code>--exact</code> — When run with this flag, <code>lerna version</code> will specify updated dependencies in updated packages exactly (with no punctuation), instead of as semver compatible (with a ^).
+          </p>
+          <p>
+            <code>--force-publish</code> — When run with this flag, <code>lerna version</code> will force publish the specified packages (comma-separated) or all packages using *..
+          </p>
+        </section>
+
         <section class="command" id="command-run">
           <h3><a href="#command-run">
-            <code>lerna run [script]</code>
+            <code>lerna run &lt;script&gt;]</code>
           </a></h3>
 
           <p>
             Run an <a href="https://docs.npmjs.com/misc/scripts">npm script</a>
             in each package that contains that script.
+          </p>
+        </section>
+
+        <section class="command" id="command-ls">
+          <h3><a href="#command-ls">
+            <code>lerna exec</code>
+          </a></h3>
+          <p>
+            Run an arbitrary command in each package. 
+          </p>
+          <p>
+            <code>
+              lerna exec -- rm -rf ./node_modules
+            </code>
           </p>
         </section>
 
@@ -211,7 +327,56 @@
           <p>
             List all of the public packages in the current Lerna repo.
           </p>
+
+          <h3>Options</h3>
+
+          <p>
+            <code>--all</code> — Show private packages that are hidden by default.
+          </p>
+
+          <p>
+            <code>--json</code> — Show information as a JSON array.
+          </p>
+
+          <p>
+            <code>--long</code> — Show extended information.
+          </p>
+
+          <p>
+            <code>--parseable</code> — Show parseable output instead of columnified view.
+          </p>
+          
         </section>
+
+        <section class="command" id="command-ls">
+            <h3><a href="#command-ls">
+              <code>lerna clean</code>
+            </a></h3>
+  
+            <p>
+                Remove the node_modules directory from all packages.
+            </p>
+          </section>
+
+
+        <section class="command" id="command-ls">
+            <h3><a href="#command-ls">
+              <code>lerna link</code>
+            </a></h3>
+  
+            <p>
+                Symlink together all packages that are dependencies of each other.
+            </p>
+
+            <h4>Options</h4>
+
+            <p>
+              <code>--force-local</code> – When passed, this flag causes the <code>link</code> command to always symlink local dependencies regardless of matching version range.
+            </p>
+          </section>
+
+
+          
 
       </section>
 
