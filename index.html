@@ -140,7 +140,9 @@
             <code>lerna import &lt;pathToRepo&gt;</code>
           </a></h3>
           <p>
-            Import the package in the local path &lt;pathToRepo&gt; into packages/&lt;directory-name&gt; with commit history.
+            Import the package in the local path &lt;pathToRepo&gt; into packages/&lt;directory-name&gt; 
+            with commit history. You will get <a href="https://github.com/lerna/lerna/blob/master/doc/troubleshooting.md#failing-when-git-tree-has-uncommitted-changes">an error</a> 
+            if you don't first <code>git commit</code> your lerna repo's changes.
           </p>
         </section>
 
