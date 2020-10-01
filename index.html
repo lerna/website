@@ -8,6 +8,33 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+     <!--script for copy text feauture-->
+    <script>
+function myFunction1() {
+  var copyText = document.getElementById("comd1");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+  
+}
+function myFunction2() {
+  var copyText = document.getElementById("comd2");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+  
+}
+function myFunction3() {
+  var copyText = document.getElementById("comd3");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+  
+}
+</script>
     <header class="hero">
       <img src="images/lerna-hero.svg" alt="Lerna logo" width="500px">
       <p class="hero__lead">A tool for managing JavaScript projects with multiple packages.</p>
@@ -62,19 +89,21 @@
 
         <p>Lerna 2.x is the recommended version to start with.</p>
 
-        <pre class="pre--command"><code>npm install --global lerna</code></pre>
+      <input type="text" id="comd1" class="pre--command" value="npm install --global lerna" size="30">
+		<input type="button" onclick="myFunction1()" value="copy text">
 
         <p>
           Next we'll create a new git repository:
         </p>
 
-        <pre class="pre--command"><code>git init lerna-repo &amp;&amp; cd lerna-repo</code></pre>
-
+     <input type="text" id="comd2" class="pre--command" value="git init lerna-repo &amp;&amp; cd lerna-repo" size="30">
+		<input type="button" onclick="myFunction2()" value="copy text">
         <p>
           And now let's turn it into a Lerna repo:
         </p>
 
-        <pre class="pre--command"><code>lerna init</code></pre>
+        <input type="text" id="comd3" class="pre--command" value="lerna init" size="30">
+		<input type="button" onclick="myFunction3()" value="copy text">
 
         <p>
           Your repository should now look like this:
