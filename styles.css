@@ -53,7 +53,7 @@ pre code {
   padding: 0;
   background: transparent;
   color: inherit;
-  border-radius: none;
+  border-radius: 0;
 }
 
 .pre--command {
@@ -171,7 +171,7 @@ pre code {
 
 .command {
   margin: 1rem 0;
-  padding: 0rem 1rem;
+  padding: 0 1rem;
   /*background: #f6f7f8;*/
   border: 3px solid #f6f7f8;
   border-radius: 0.4rem;
