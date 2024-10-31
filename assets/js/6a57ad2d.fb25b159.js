@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[806],{8650:e=>{e.exports=JSON.parse('{"title":"How To Guides","description":"Get Started","slug":"/features","permalink":"/docs/features","navigation":{"previous":{"title":"Lerna and Nx","permalink":"/docs/lerna-and-nx"},"next":{"title":"Run Tasks","permalink":"/docs/features/run-tasks"}}}')}}]);
