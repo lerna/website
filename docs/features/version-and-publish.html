@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1LKTTC3R7Q"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-1LKTTC3R7Q",{anonymize_ip:!0})</script><link rel="stylesheet" href="/assets/css/styles.ed0c6522.css">
-<script src="/assets/js/runtime~main.db32cb8e.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.99ead6b3.js" defer="defer"></script>
 <script src="/assets/js/main.7bc6f9c5.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -56,7 +56,13 @@ can be demo apps. In this repo, <code>remixapp</code> isn&#x27;t &quot;private&q
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="fixedlocked-mode-default">Fixed/Locked mode (default)<a href="#fixedlocked-mode-default" class="hash-link" aria-label="Direct link to Fixed/Locked mode (default)" title="Direct link to Fixed/Locked mode (default)" translate="no">​</a></h3>
 <p>Fixed mode Lerna projects operate on a single version line. The version is kept in the <code>lerna.json</code> file at the root of your project under the <code>version</code> key. When you run <code>lerna publish</code>, if a package has been updated since the last time a release was made, it will be updated to the new version you&#x27;re releasing. This means that you only publish a new version of a package when you need to.</p>
 <blockquote>
-<p>Note: If you have a major version zero, all updates are <a href="https://semver.org/#spec-item-4" target="_blank" rel="noopener noreferrer" class="">considered breaking</a>. Because of that, running <code>lerna publish</code> with a major version zero and choosing any non-prerelease version number will cause new versions to be published for all packages, even if not all packages have changed since the last release.</p>
+<p>Note: When the current version is below <code>1.0.0</code>, certain updates are <a href="https://semver.org/#spec-item-4" target="_blank" rel="noopener noreferrer" class="">considered breaking</a> per semver conventions. Specifically:</p>
+<ul>
+<li class="">A <strong>major</strong> bump is always breaking (e.g., <code>0.5.0</code> → <code>1.0.0</code>)</li>
+<li class="">A <strong>minor</strong> bump is breaking when the current version is below <code>1.0.0</code> (e.g., <code>0.6.0</code> → <code>0.7.0</code>)</li>
+<li class="">A <strong>patch</strong> bump is breaking when the current version is below <code>0.1.0</code> (e.g., <code>0.0.1</code> → <code>0.0.2</code>)</li>
+</ul>
+<p>A regular patch bump such as <code>0.6.38</code> → <code>0.6.39</code> is <strong>not</strong> considered breaking. When a bump is considered breaking, <code>lerna publish</code> in fixed mode will publish new versions for all packages, even if not all packages have changed since the last release.</p>
 </blockquote>
 <p>Use this if you want to automatically tie all package versions together. One issue with this approach is that a major change in any package will result in all packages having a new major version.</p>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="synchronized-versions">Synchronized Versions<a href="#synchronized-versions" class="hash-link" aria-label="Direct link to Synchronized Versions" title="Direct link to Synchronized Versions" translate="no">​</a></h4>
