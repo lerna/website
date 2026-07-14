@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1LKTTC3R7Q"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-1LKTTC3R7Q",{anonymize_ip:!0})</script><link rel="stylesheet" href="/assets/css/styles.ed0c6522.css">
-<script src="/assets/js/runtime~main.7521fabe.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.a1c5f65d.js" defer="defer"></script>
 <script src="/assets/js/main.4fba5ada.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -37,7 +37,7 @@ the result of the test run.</p></div></div>
 <p>When Lerna determines that the inputs for a task have not changed, it recreates the outputs of that task as if it actually ran on your machine - but much faster. The outputs of a cached task include both the terminal output and the files created in the defined <code>output</code> directories for that task.</p>
 <p>You can test this out by deleting the <code>dist</code> folder that the <code>header:build</code> task outputs to and then running <code>lerna run build --scope=header</code> again. The cached task will replay instantly and the correct files will be present in the <code>dist</code> folder.</p>
 <div class="language-treeview codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-treeview codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">header/</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">└── dist/  &lt;-- this folder gets recreated</span><br></span></code></pre></div></div>
-<p>If your task creates output artifacts in a different location, you can <a href="https://nx.dev/reference/project-configuration#outputs" target="_blank" rel="noopener noreferrer" class="">change the output folder(s)</a> that are cached. You can also <a href="https://nx.dev/more-concepts/customizing-inputs" target="_blank" rel="noopener noreferrer" class="">customize which inputs</a> will invalidate the cache if they are changed.</p>
+<p>If your task creates output artifacts in a different location, you can <a href="https://nx.dev/reference/project-configuration#outputs" target="_blank" rel="noopener noreferrer" class="">change the output folder(s)</a> that are cached. You can also <a href="https://nx.dev/docs/guides/tasks--caching/configure-inputs" target="_blank" rel="noopener noreferrer" class="">customize which inputs</a> will invalidate the cache if they are changed.</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="advanced-caching">Advanced Caching<a href="#advanced-caching" class="hash-link" aria-label="Direct link to Advanced Caching" title="Direct link to Advanced Caching" translate="no">​</a></h2>
 <p>For a more in-depth understanding of the caching implementation and to fine-tune the caching for your repo, read <a class="" href="/docs/concepts/how-caching-works">How Caching Works</a>.</p>
 <h2 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="local-computation-caching">Local Computation Caching<a href="#local-computation-caching" class="hash-link" aria-label="Direct link to Local Computation Caching" title="Direct link to Local Computation Caching" translate="no">​</a></h2>
